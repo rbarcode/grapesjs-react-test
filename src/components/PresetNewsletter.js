@@ -1,18 +1,9 @@
 import React from 'react';
-import grapesjs, {Editor} from 'grapesjs';
+import grapesjs from 'grapesjs';
 import plugin from 'grapesjs-preset-newsletter';
 import GjsEditor from '@grapesjs/react';
 
 const PresetNewsletter = () => {
-
-    //Initializes the preset-newsletter
-  //   const editor = grapesjs.init({
-  //   container : '#gjs',
-  //   plugins: [plugin],
-  //   pluginsOpts: {
-  //     [plugin]: { /* options */ }
-  //   },
-  // });
 
 
   return (
@@ -24,13 +15,12 @@ const PresetNewsletter = () => {
         // This is an optional prop, you can always import the CSS directly in your JS if you wish.
         grapesjsCss="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
         container='#gjs'
-        plugins={[plugin]}
+        plugins={[editor => plugin(editor, { /* options */ }),]}
         // GrapesJS init options
         options={{
           height: '100vh',
           storageManager: false,
         }}
-        //onEditor={Editor}
       />
     </>
     
